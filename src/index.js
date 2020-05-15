@@ -1,17 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import Reactor from "./core/reactor";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+// grab all service providers from all users
+import UserServiceProvider from './modules/users/service-provider';
+import CategoriesServiceProvider from './modules/categories/service-provider';
+
+const reactor = new Reactor();
+reactor.registerServiceProviders([UserServiceProvider, CategoriesServiceProvider])
+reactor.react();
