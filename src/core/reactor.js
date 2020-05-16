@@ -1,16 +1,14 @@
 import * as serviceWorker from './serviceWorker';
-import routerServiceProvider from './router-service-provider';
-import serviceProvidersContainer from './service-provider-container';
+import { scan } from 'core/router'
 
 export default class Reactor {
-  internalServiceProviders = [
-    routerServiceProvider
-  ];
 
-  constructor() {
-    serviceProvidersContainer.registerInternalServiceProviders(this.internalServiceProviders);
+  /**
+   * start the application
+   */
+  react() {
+    scan();
   }
-
   /**
    * allow the app to work offline
    * @returns {Reactor}
@@ -21,25 +19,5 @@ export default class Reactor {
     // Learn more about service workers: https://bit.ly/CRA-PWA
     serviceWorker.register();
     return this;
-  }
-
-  /**
-   * register entire app service providers to the service provider container
-   * @param serviceProviders
-   */
-  registerServiceProviders(serviceProviders) {
-    serviceProvidersContainer.register(serviceProviders)
-  }
-
-  /**
-   * start the application
-   */
-  react() {
-    // start calling all registered service providers
-    serviceProvidersContainer.dispatch();
-
-    //start scanning all routes
-    routerServiceProvider.scan();
-
   }
 }

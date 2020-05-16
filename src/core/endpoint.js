@@ -8,8 +8,7 @@ export default axios.create({
         if (Is.formElement(data)) {
             return new FormData(data);
         }
-
-
+        
         return data;
     }],
 });

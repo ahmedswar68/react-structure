@@ -6,11 +6,11 @@ import { title, description } from 'core/metadata';
 import FormInput from 'core/component/form/form-input';
 import ReactorComponent from 'core/component/reactor.component';
 import { mapObject } from 'core/helpers';
-import user from 'core/user';
+import user from 'user';
 
 export default class Login extends ReactorComponent {
-    state = {
-    };
+
+    state = {};
 
     /**
      * {@inheritdoc} 
