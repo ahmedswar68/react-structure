@@ -107,6 +107,16 @@ class ReactorComponent extends Component {
     get(key, $default = null) {
         return Obj.get(this.state, key, $default);
     }
+
+    /**
+     * Get component children
+     * 
+     * @param   {any} args 
+     * @returns {array|null}
+     */
+    children() {
+        return this.props.children;
+    }
 }
 
 export default ReactorComponent;

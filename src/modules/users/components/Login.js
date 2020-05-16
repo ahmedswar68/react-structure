@@ -7,6 +7,7 @@ import FormInput from 'core/component/form/form-input';
 import ReactorComponent from 'core/component/reactor.component';
 import { mapObject } from 'core/helpers';
 import user from 'user';
+import { navigateTo } from 'core/router';
 
 export default class Login extends ReactorComponent {
 
@@ -28,7 +29,7 @@ export default class Login extends ReactorComponent {
         try {
             let { data } = await login(e.target);
             user.login(data);
-
+            navigateTo('/users');
         } catch (error) {
             let errors = error.response.data.errors;
 
