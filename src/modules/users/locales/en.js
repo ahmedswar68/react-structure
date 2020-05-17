@@ -1,6 +1,5 @@
 import localization from 'core/localization';
 
 localization.extend('en', {
-    users: 'Users List',
-    logout: 'Logout',
+    users: 'Users List',    
 });

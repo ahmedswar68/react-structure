@@ -34,7 +34,7 @@ export default function SidebarListItemGroup(props) {
         <>
             <ListItem button onClick={handleClick}>
                 <ListItemIcon>
-                    {React.createElement(icon)}
+                    { React.createElement(icon) }
                 </ListItemIcon>
                 <ListItemText primary={text} />
                 {open ? <ExpandLess /> : <ExpandMore />}

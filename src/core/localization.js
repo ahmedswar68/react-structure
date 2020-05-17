@@ -1,6 +1,6 @@
 import Globals from './globals';
 import { Obj } from 'reinforcements';
-import { vsprintf } from 'sprintf-js';
+import {vsprintf} from 'sprintf-js';
 
 class Localization {
     /**
@@ -19,7 +19,7 @@ class Localization {
      * @param  {object} keywords
      * @returns {void}
      */
-    extend(localeCode, keywords) {
+    extend(localeCode, keywords) {        
         this.keywords[localeCode] = Obj.merge(this.keywords[localeCode], keywords);
     }
 
@@ -29,7 +29,7 @@ class Localization {
      * @param   {string} keyword
      * @returns {any} 
      */
-    translate(keyword, ...args) {
+    translate(keyword, ...args) {        
         return this.translateFrom(this.localeCode, keyword, ...args);
     }
 
@@ -45,7 +45,7 @@ class Localization {
         let translation = Obj.get(this.keywords, `${localeCode}.${keyword}`);
 
         return vsprintf(translation, args);
-    }
+    } 
 }
 
 const localizationObject = new Localization();

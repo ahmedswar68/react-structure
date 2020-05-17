@@ -1,16 +1,18 @@
 import './login.scss';
+import user from 'user';
 import React from 'react';
+import { mapObject } from 'core/helpers';
 import Form from 'core/component/form/form';
 import { login } from 'modules/users/services/auth';
 import { title, description } from 'core/metadata';
 import FormInput from 'core/component/form/form-input';
 import ReactorComponent from 'core/component/reactor.component';
-import { mapObject } from 'core/helpers';
-import user from 'user';
 import { navigateTo } from 'core/router';
 
 export default class Login extends ReactorComponent {
-
+    /**
+     * {@inheritdoc}
+     */
     state = {};
 
     /**
@@ -26,10 +28,14 @@ export default class Login extends ReactorComponent {
      */
     login = async (e) => {
         this.set('errors', null); // make sure to clear previous errors
+
         try {
             let { data } = await login(e.target);
+
             user.login(data.user);
+
             navigateTo('/users');
+
         } catch (error) {
             let errors = error.response.data.errors;
 
@@ -37,15 +43,21 @@ export default class Login extends ReactorComponent {
         }
     };
 
+    /**
+     * Display errors coming from api 
+     */
     displayErrors() {
         this.errors = this.get('errors');
         return mapObject(this.errors, (key, value) => {
             return (
-                <div key={key}>{this.errors[key]}</div>
+                <div key={key}>{value}</div>
             );
         });
-    };
+    }
 
+    /**
+     * {@inheritdoc}
+     */
     render() {
         return (
             <div id="login-page">

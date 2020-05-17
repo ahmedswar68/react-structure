@@ -15,7 +15,7 @@ export default class RestfulEndpoint {
      * @param   {object} params 
      * @returns {Promise}
      */
-    list(params) {
+    list(params) {        
         return endpoint.get(this.route, {
             params,
         });

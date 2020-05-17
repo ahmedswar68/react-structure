@@ -4,6 +4,7 @@ import { Obj } from 'reinforcements';
 class ReactorComponent extends Component {
     constructor(props) {
         super(props);
+
         setTimeout(() => {
             this.init();
         }, 0);
@@ -83,7 +84,6 @@ class ReactorComponent extends Component {
         this.destroy();
     }
 
-
     /**
      * Set the given value to its corresponding key
      * The key here is a dot notation basis 
@@ -99,6 +99,16 @@ class ReactorComponent extends Component {
     }
 
     /**
+     * Get component children
+     * 
+     * @param   {any} args 
+     * @returns {array|null}
+     */
+    children() {
+        return this.props.children;
+    }
+
+    /**
      * Get the value of the given `dot.notation` key from state
      * 
      * @param   {string} key
@@ -107,16 +117,6 @@ class ReactorComponent extends Component {
      */
     get(key, $default = null) {
         return Obj.get(this.state, key, $default);
-    }
-
-    /**
-     * Get component children
-     * 
-     * @param   {any} args 
-     * @returns {array|null}
-     */
-    children() {
-        return this.props.children;
     }
 }
 

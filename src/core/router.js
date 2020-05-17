@@ -22,9 +22,7 @@ let localeCodes = config.get('locales');
 // then get the first segment of the created array 
 let [firstSegmentOfLocation] = history.location.pathname.replace(/^\//, '').split('/');
 
-
 if (localeCodes[firstSegmentOfLocation]) {
-    console.log(localeCodes[firstSegmentOfLocation], firstSegmentOfLocation);
     document.documentElement.dir = localeCodes[firstSegmentOfLocation];
     document.documentElement.lang = firstSegmentOfLocation;
 }

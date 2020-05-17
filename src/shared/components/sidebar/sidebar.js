@@ -24,7 +24,7 @@ export default function Sidebar(props) {
                 nestedItemClass={classes.sidebarNestedItem}
                 text={item.text}
                 icon={item.icon}
-                items={item.items}
+                items={item.items} 
             />;
         }
 
@@ -57,7 +57,7 @@ export default function Sidebar(props) {
                 component="nav"
                 className={classes.sidebar}
             >
-                {itemsList}
+                { itemsList }
             </List>
         </Drawer>
     );

@@ -1,4 +1,4 @@
-import React from 'react';
+import React  from 'react';
 import events from '@flk/events';
 import ReactorComponent from 'core/component/reactor.component';
 
