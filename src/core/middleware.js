@@ -2,7 +2,9 @@ import React from 'react';
 import Is from '@flk/supportive-is';
 
 export default function Middleware(props) {
-    let { route, history } = props;
+    let { route, history, match } = props;
+
+    let { params } = match;
 
     let middlewareList = route.middleware;
 
@@ -12,7 +14,7 @@ export default function Middleware(props) {
         }
 
         for (let middleware of middlewareList) {
-            let output = middleware(route, history);
+            let output = middleware(route, history, params);
 
             if (output) {
                 return output;
@@ -20,5 +22,5 @@ export default function Middleware(props) {
         }
     }
 
-    return <route.component history={history} />;
+    return <route.component params={params} history={history} />;
 }

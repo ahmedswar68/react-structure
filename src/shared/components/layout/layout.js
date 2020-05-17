@@ -6,10 +6,18 @@ import Sidebar from '../sidebar/sidebar';
 import ReactorComponent from 'core/component/reactor.component';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import layoutSettings from '../layout-settings';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { createMuiTheme, ThemeProvider, StylesProvider, jssPreset } from '@material-ui/core/styles';
 import lightBlue from '@material-ui/core/colors/lightBlue';
+import Globals from 'core/globals';
+import { create } from 'jss';
+import rtl from 'jss-rtl';
+
+
+const jss = create({ plugins: [...jssPreset().plugins, rtl()] });
+
 
 const theme = createMuiTheme({
+    direction: Globals.direction,
     palette: {
         primary: {
             main: lightBlue[800],
@@ -33,27 +41,29 @@ function PersistentDrawerLeft(props) {
     };
 
     return (
-        <ThemeProvider theme={theme}>
-            <div className={classes.root}>
-                <CssBaseline />
-                <Header
-                    sidebarIsOpened={open}
-                    onClick={handleDrawerOpen}
-                />
-                <Sidebar
-                    open={open}
-                    onClose={handleDrawerClose}
-                />
-                <main
-                    className={clsx(classes.content, {
-                        [classes.contentShift]: open,
-                    })}
-                >
-                    <div className={classes.drawerHeader} />
-                    {props.children}
-                </main>
-            </div>
-        </ThemeProvider>
+        <StylesProvider jss={jss}>
+            <ThemeProvider theme={theme}>
+                <div className={classes.root}>
+                    <CssBaseline />
+                    <Header
+                        sidebarIsOpened={open}
+                        onClick={handleDrawerOpen}
+                    />
+                    <Sidebar
+                        open={open}
+                        onClose={handleDrawerClose}
+                    />
+                    <main
+                        className={clsx(classes.content, {
+                            [classes.contentShift]: open,
+                        })}
+                    >
+                        <div className={classes.drawerHeader} />
+                        {props.children}
+                    </main>
+                </div>
+            </ThemeProvider>
+        </StylesProvider>
     );
 }
 

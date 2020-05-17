@@ -28,7 +28,7 @@ export default class Login extends ReactorComponent {
         this.set('errors', null); // make sure to clear previous errors
         try {
             let { data } = await login(e.target);
-            user.login(data);
+            user.login(data.user);
             navigateTo('/users');
         } catch (error) {
             let errors = error.response.data.errors;

@@ -3,7 +3,6 @@ import cache from 'core/cache';
 class User {
     constructor() {
         this.userData = cache.get('user');
-        console.log(this.userData, 'this.userData');
     }
 
     /**
@@ -34,7 +33,7 @@ class User {
      * @returns {string}
      */
     getAccessToken() {
-        return this.userData.user.accessToken;
+        return this.userData.accessToken;
     }
 }
 
