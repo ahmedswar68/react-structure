@@ -4,8 +4,9 @@ import { Obj } from 'reinforcements';
 class ReactorComponent extends Component {
     constructor(props) {
         super(props);
-
-        this.init();
+        setTimeout(() => {
+            this.init();
+        }, 0);
     }
 
     /**

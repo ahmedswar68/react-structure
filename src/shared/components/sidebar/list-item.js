@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -21,3 +22,9 @@ export default function SidebarListItem(props) {
         </ListItem>
     );
 }
+SidebarListItem.propTypes = {
+    text: PropTypes.string.isRequired,
+    route: PropTypes.string.isRequired,
+    // icon: PropTypes.element.isRequired,
+    nestedItemClass: PropTypes.string
+};
