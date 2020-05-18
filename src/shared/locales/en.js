@@ -1,6 +1,7 @@
 import localization from 'core/localization';
 
 localization.extend('en', {
+    appName: 'Online Store',
     add: 'Add',
     edit: 'Edit',
     remove: 'Remove',    

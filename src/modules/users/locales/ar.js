@@ -1,5 +1,6 @@
 import localization from 'core/localization';
 
 localization.extend('ar', {
-    users: 'قائمة الأعضاء',
+    users: 'قائمة الأعضاء',    
+    logout: 'خروج',
 });
