@@ -6,7 +6,7 @@ import Tooltip from '@material-ui/core/Tooltip';
 import DeleteIcon from '@material-ui/icons/DeleteSweep';
 import { makeStyles } from '@material-ui/core/styles';
 import lightBlue from '@material-ui/core/colors/lightBlue';
-import { trans } from 'core/localization';
+import { trans } from 'reactor/localization';
 
 const useStyles = makeStyles({
     addButton: {

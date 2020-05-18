@@ -1,8 +1,8 @@
 import 'shared/config';
-import 'shared/locales/en';
 
 // home
 import 'modules/home/routes';
+import 'shared/locales/en';
 import 'modules/home/locales/en';
 import 'modules/home/locales/ar';
 
@@ -12,7 +12,7 @@ import 'modules/users/locales/en';
 import 'modules/users/locales/ar';
 
 // Reactor
-import Reactor from 'core/reactor';
+import Reactor from 'reactor/reactor';
 
 const reactor = new Reactor();
 

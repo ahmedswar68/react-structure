@@ -2,6 +2,8 @@ const direction = document.documentElement.dir || 'ltr';
 const left = direction === 'ltr' ? 'left' : 'right';
 const right = direction === 'ltr' ? 'right' : 'left';
 
+console.log('Peep')
+
 const Globals = {
     left: left,
     right: right,

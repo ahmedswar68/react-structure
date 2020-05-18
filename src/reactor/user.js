@@ -1,4 +1,4 @@
-import cache from 'core/cache';
+import cache from 'reactor/cache';
 
 class User {
     constructor() {
@@ -7,7 +7,7 @@ class User {
 
     /**
      * Check if user is logged in
-     *
+     * 
      * @returns {boolean}
      */
     isLoggedIn() {
@@ -15,11 +15,11 @@ class User {
     }
 
     /**
-     * Log the user in
+     * Log the user in 
      * It will store the data in the storage engine i.e Local Storage
      * But will not make the ajax request
-     *
-     * @param  {object} userData
+     * 
+     * @param  {object} userData 
      * @returns {void}
      */
     login(userData) {
@@ -37,7 +37,7 @@ class User {
 
     /**
      * Get user access token
-     *
+     * 
      * @returns {string}
      */
     getAccessToken() {

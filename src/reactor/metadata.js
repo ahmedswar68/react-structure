@@ -1,4 +1,4 @@
-import { trans } from 'core/localization';
+import {trans} from 'reactor/localization';
 
 /**
  * Set page title

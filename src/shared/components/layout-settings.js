@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core";
 import { lightBlue } from "@material-ui/core/colors";
-import Globals from "core/globals";
+import Globals from "reactor/globals";
 
 const drawerWidth = 240;
 const layoutSettings = makeStyles((theme) => ({
@@ -8,7 +8,7 @@ const layoutSettings = makeStyles((theme) => ({
         display: 'flex',
     },
     grow: {
-      flexGrow: 1,
+        flexGrow: 1,
     },
     appBar: {
         backgroundColor: lightBlue[800],
@@ -19,7 +19,7 @@ const layoutSettings = makeStyles((theme) => ({
     },
     appBarShift: {
         width: `calc(100% - ${drawerWidth}px)`,
-        marginLeft: drawerWidth,
+        [Globals.marginLeft]: drawerWidth,
         transition: theme.transitions.create(['margin', 'width'], {
             easing: theme.transitions.easing.easeOut,
             duration: theme.transitions.duration.enteringScreen,

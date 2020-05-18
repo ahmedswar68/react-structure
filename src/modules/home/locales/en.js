@@ -1,5 +1,5 @@
-import localization from 'core/localization';
+import localization from 'reactor/localization';
 
 localization.extend('en', {
-    dashboard: 'Dashboard',
+    dashboard: 'Dashboard',    
 });

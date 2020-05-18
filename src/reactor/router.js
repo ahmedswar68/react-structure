@@ -9,7 +9,7 @@ import {
 // use custom history to manage router navigation from our side
 import { createBrowserHistory } from 'history';
 import Middleware from './middleware';
-import config from 'core/config';
+import config from 'reactor/config';
 
 const history = createBrowserHistory();
 
@@ -21,6 +21,8 @@ let localeCodes = config.get('locales');
 // then split the pathname by the /
 // then get the first segment of the created array 
 let [firstSegmentOfLocation] = history.location.pathname.replace(/^\//, '').split('/');
+
+console.log('00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000')
 
 if (localeCodes[firstSegmentOfLocation]) {
     document.documentElement.dir = localeCodes[firstSegmentOfLocation];

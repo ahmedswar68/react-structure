@@ -1,5 +1,5 @@
 import React from 'react';
-import { translatedTitle } from 'core/metadata';
+import { translatedTitle } from 'reactor/metadata';
 import DashboardLayout from 'shared/components/layout/dashboard-layout';
 
 export default function Home(props) {
