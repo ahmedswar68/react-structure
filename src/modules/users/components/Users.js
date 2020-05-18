@@ -1,10 +1,10 @@
 import React from 'react';
-import Layout from 'layout';
-import { title } from 'core/metadata';
+import { translatedTitle } from 'core/metadata';
 import Table from 'shared/components/table/table';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import usersService from 'modules/users/services/users-service';
 import ReactorComponent from 'core/component/reactor.component';
+import DashboardLayout from 'shared/components/layout/dashboard-layout';
 import { TableEditButton, TableDeleteButton } from 'shared/components/table/table-actions';
 
 export default class Users extends ReactorComponent {
@@ -42,7 +42,7 @@ export default class Users extends ReactorComponent {
      * {@inheritdoc}
      */
     async init() {
-        title(this.table.heading);
+        translatedTitle(this.table.heading);
 
         let { data } = await usersService.list(); // /users
 
@@ -68,9 +68,9 @@ export default class Users extends ReactorComponent {
     render() {
         let displayedContent = this.get('isLoading') ? <LinearProgress /> : this.renderTable();
         return (
-            <Layout>
+            <DashboardLayout>
                 {displayedContent}
-            </Layout>
+            </DashboardLayout>
         );
     }
 }   
