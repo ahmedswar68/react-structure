@@ -1,4 +1,4 @@
-import { scan } from 'core/router';
+import { scan } from 'reactor/router';
 import * as serviceWorker from './serviceWorker';
 
 export default class Reactor {

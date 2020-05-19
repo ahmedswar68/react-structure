@@ -1,6 +1,6 @@
 import user from "user";
 import { logout } from "../services/auth";
-import { navigateTo } from 'core/router';
+import { navigateTo } from 'reactor/router';
 
 export default function userLogout() {
     // logout from the server

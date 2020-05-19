@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core";
 import { lightBlue } from "@material-ui/core/colors";
-import Globals from "core/globals";
+import Globals from "reactor/globals";
 
 const drawerWidth = 240;
 const layoutSettings = makeStyles((theme) => ({

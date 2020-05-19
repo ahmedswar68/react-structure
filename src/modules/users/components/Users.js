@@ -1,9 +1,9 @@
 import React from 'react';
-import { translatedTitle } from 'core/metadata';
+import { translatedTitle } from 'reactor/metadata';
 import Table from 'shared/components/table/table';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import usersService from 'modules/users/services/users-service';
-import ReactorComponent from 'core/component/reactor.component';
+import ReactorComponent from 'reactor/component/reactor.component';
 import DashboardLayout from 'shared/components/layout/dashboard-layout';
 import { TableEditButton, TableDeleteButton } from 'shared/components/table/table-actions';
 

@@ -9,7 +9,7 @@ import {
 // use custom history to manage router navigation from our side
 import { createBrowserHistory } from 'history';
 import Middleware from './middleware';
-import config from 'core/config';
+import config from 'reactor/config';
 
 const history = createBrowserHistory();
 
@@ -66,7 +66,7 @@ function Routes() {
             // /en/users
             // /ar/users
             <Route path={`/:localeCode(${Object.keys(localeCodes).join('|')})?${route.path}`} exact={true} key={index}>
-                {(routeData) => {
+                {(routeData) => {                    
                     return <Middleware match={routeData.match} location={routeData.location} route={route} history={history} />;
                 }}
             </Route>

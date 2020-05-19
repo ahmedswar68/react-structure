@@ -3,7 +3,7 @@ import { Obj } from 'reinforcements';
 import Table from '@material-ui/core/Table';
 import Paper from '@material-ui/core/Paper';
 import TableToolBar from './table-toolbar';
-import { trans } from 'core/localization';
+import { trans } from 'reactor/localization';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
