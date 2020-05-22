@@ -1,5 +1,5 @@
-import localization from "reactor/localization";
+import localization from 'reactor/localization';
 
-localization.extend("ar", {
-  dashboard: "لوحة التحكم",
+localization.extend('ar', {
+    dashboard: 'لوحة التحكم',    
 });

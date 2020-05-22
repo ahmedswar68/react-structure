@@ -18,33 +18,33 @@ const useStyles = makeStyles({
 });
 
 export function TableAddButton(props) {
-    const classes = useStyles();
-    return (
-        <Tooltip classes={{ tooltip: classes.tooltip }} placement="top" title={trans('add')}>
-            <IconButton>
-                <AddIcon fontSize="large" color="primary" />
-            </IconButton>
+    const classes = useStyles(); 
+    return (    
+        <Tooltip classes={{tooltip: classes.tooltip}} placement="top" title={trans('add')}>
+        <IconButton onClick={props.onClick}>
+            <AddIcon fontSize="large" color="primary" />
+        </IconButton>
         </Tooltip>
     )
 }
 export function TableEditButton(props) {
-    const classes = useStyles();
+    const classes = useStyles(); 
     return (
-        <Tooltip classes={{ tooltip: classes.tooltip }} placement="top" title={trans('edit')}>
-            <IconButton>
-                <EditIcon />
-            </IconButton>
+        <Tooltip classes={{tooltip: classes.tooltip}} placement="top" title={trans('edit')}>
+        <IconButton>
+            <EditIcon />
+        </IconButton>
         </Tooltip>
     )
 }
 
 export function TableDeleteButton(props) {
-    const classes = useStyles();
+    const classes = useStyles(); 
     return (
-        <Tooltip classes={{ tooltip: classes.tooltip }} placement="top" title={trans('remove')}>
-            <IconButton>
-                <DeleteIcon />
-            </IconButton>
+        <Tooltip classes={{tooltip: classes.tooltip}} placement="top" title={trans('remove')}>
+        <IconButton>
+            <DeleteIcon />
+        </IconButton>
         </Tooltip>
     )
 }
